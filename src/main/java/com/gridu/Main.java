@@ -125,7 +125,6 @@ class Data {
                 foundDataArr.add(item);
             }
         }
-        System.out.println(foundDataArr);
         return foundDataArr;
     }
 
