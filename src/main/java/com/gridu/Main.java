@@ -14,9 +14,9 @@ public class Main {
             switch (menu.chooseMenuOption()) {
                 case 1 -> {
                     switch (menu.chooseStrategy()) {
-                        case "ALL" -> data.printTest("ALL");
-                        case "ANY" -> data.printTest("ANY");
-                        case "NONE" -> data.printTest("NONE");
+                        case "ALL" -> data.printDataByStrategy("ALL");
+                        case "ANY" -> data.printDataByStrategy("ANY");
+                        case "NONE" -> data.printDataByStrategy("NONE");
                         default -> System.out.println("Please input ALL, ANY or NONE");
                     }
                 }
@@ -69,7 +69,7 @@ class Data {
         }
     }
 
-    public void printTest(String strategy) {
+    public void printDataByStrategy(String strategy) {
         System.out.println("\nEnter a name or email to search all suitable people.");
         ArrayList<String> foundDataArr = switch (strategy) {
             case "ALL" -> findAll(scanner.nextLine());
@@ -125,6 +125,7 @@ class Data {
                 foundDataArr.add(item);
             }
         }
+        System.out.println(foundDataArr);
         return foundDataArr;
     }
 
